@@ -1,0 +1,59 @@
+/*
+
+    En CS existen diferentes formatos para que fuentes y asi se 
+    procesen.
+
+    Esta es una lista:
+
+    True Type Font (TTF) -> Fue el primer formato estandar y es la que usualmente vamos a encontrar
+    ya que es la que lleva mas tiempo en la web.
+
+    Open True Type Font (OTF) -> Es practicamnte igual que TTF pero se creo para facilitar o implementar
+    la creacion de las curvas. Si nos encontramos una fuente asi hay que recordar que funciona exactamente igual que TTF
+
+    Web Open Font Format (WOFF) (WOFF2) -> Es un formato mucho mas ligero y mejora el rendimiento.
+    Funciona a traves de metadatos. WOFF tiene soporte total y WOFF2 no funciona en internet explorer
+
+    NO RECOMENDABLES
+    -----------------------------------------------------------------------------------------------------------
+    Scalable Vector Graphics (SVG) -> Para efectos y animaciones sobre el texto, no es recomendable usarlo 
+    en el texto generico de la web, tiene muchos problemas
+
+    Embedded Open Type (EOT) -> Primer formato digital propuesto para sitios WEB y es comprimido.
+    Se quedo como una propuesta pero no paso como estandar.
+    -----------------------------------------------------------------------------------------------------------
+    Regla @font-face    
+    Esta es la forma de utilizar fuentes que tenemos descargadas y que no traemos de un servidor
+    remoto, cuando usamos google font, esto es lo que esta pasando detras.
+
+    la sintaxis es esta:
+     @font-face { 
+         font-family: Nombre de La familia, se Lo asignamos nosotros; 
+
+         src: aquí pondremos dos tipos de valores. 
+         Local () -> pondremos el nombre de la fuente para buscarla en el ordenador deL usuario, de esa forma podremos evitar descargarla 
+         url() -> Si no encontramos esa fuente procederemos a descargarla. 
+
+         Existe otro valor, menos usado que es format 
+
+         format() opcional si queremos ser más especificos con La fuente que vamos a buscar o descargar, si no Lo ponemos cogerá eL primer formato soportado, si lo ponemos sólo usará el que -> Este valor lo pasaremos de forma hemos estabLecido, y si no lo encuentra no hará nada. 
+     }
+
+     Podemos añadirle mas valores como por ejemplo font-size, font-weight y font-display(experimental), pero esos son opcionales
+
+     https://convertio.co/es/ para transformar los tipos de fuentes
+*/
+
+@font-face {
+    font-family: 'texto';
+    src: url(BLKCHCRY.TTF); /*Ponemos la direccion de la fuente*/
+}
+
+
+body{
+
+    background-color: gray;
+    color: aliceblue;
+    font-family:'texto'; /*Agregamos la familia que creamos*/
+}
+
